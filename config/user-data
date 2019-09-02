@@ -1,0 +1,17 @@
+#cloud-config
+#vim:syntax=yaml
+users:
+  # A user by the name `ec2-user` is created in the image by default.
+  - default
+  - name: vagrant
+    groups: sudo
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    plain_text_passwd: amazon
+    lock_passwd: true
+    ssh-authorized-keys:
+      - ssh-rsa put_your_public_key_here
+chpasswd:
+  list: |
+    ec2-user:amazon
+
+# In the above line, do not add any spaces after 'ec2-user:'.
