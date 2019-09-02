@@ -5,6 +5,6 @@ box:
 	vagrant package --base 'Amazon Linux 2' && vagrant box add --name amazonlinux2rc package.box
 
 up:
-	cd vagrant; vagrant up
+	vagrant up
 
 
